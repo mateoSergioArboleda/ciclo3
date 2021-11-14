@@ -35,26 +35,26 @@ public class ReservacionRepository {
     public Reservacion save(Reservacion reservacion){
         return crud4.save(reservacion);
     }
-     public void delete(Reservacion reservacion){
+    public void delete(Reservacion reservacion){
         crud4.delete(reservacion);
     }
      
-     public List<Reservacion> ReservacionStatus (String status){
+    public List<Reservacion> ReservacionStatus (String status){
          return crud4.findAllByStatus(status);
     }
      
-     public List<Reservacion> ReservacionTiempo (Date a, Date b){
-         return crud4.findAllByStartDateAfterAndStartDateBefore(a, b);
-     }
+    public List<Reservacion> ReservacionTiempo (Date a, Date b){
+        return crud4.findAllByStartDateAfterAndStartDateBefore(a, b);
+    }
    
-     public List<ContadorClientes> getTopClientes(){
-         List<ContadorClientes> res=new ArrayList<>();
-         List<Object[]>report = crud4.countTotalReservationsByClient();
-         for(int i=0; i<report.size();i++){
-             res.add(new ContadorClientes((Long)report.get(i)[1],(Cliente) report.get(i)[0]));
+    public List<ContadorClientes> getTopClientes(){
+        List<ContadorClientes> res=new ArrayList<>();
+        List<Object[]>report = crud4.countTotalReservationsByClient();
+        for(int i=0; i<report.size();i++){
+            res.add(new ContadorClientes((Long)report.get(i)[1],(Cliente) report.get(i)[0]));
          
-         }
-         return res;
+        }
+        return res;
 
 }
     }

@@ -4,11 +4,6 @@
  */
 package co.usa.ciclo3.ciclo3.model;
 
-/**
- *
- * @author MATEO
- */
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import java.util.List;
