@@ -5,6 +5,8 @@
 package co.usa.ciclo3.ciclo3.web;
 
 import co.usa.ciclo3.ciclo3.model.Reservacion;
+import co.usa.ciclo3.ciclo3.reportes.ContadorClientes;
+import co.usa.ciclo3.ciclo3.reportes.StatusReservas;
 import co.usa.ciclo3.ciclo3.service.ReservacionService;
 import java.util.List;
 import java.util.Optional;
@@ -58,7 +60,7 @@ public class ReservacionController {
     public boolean delete(@PathVariable("id") int reservationId) {
         return servicio.deleteReservation(reservationId);
     }
-/*    
+    
     @GetMapping("/report-status")
     public StatusReservas getReservas(){
         return servicio.getReporteStatusReservaciones();
@@ -74,5 +76,5 @@ public class ReservacionController {
         return servicio.servicioTopClientes();
     
     }
-*/   
+   
 }

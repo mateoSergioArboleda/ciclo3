@@ -5,7 +5,11 @@
 package co.usa.ciclo3.ciclo3.repository;
 
 import co.usa.ciclo3.ciclo3.interfaces.ReservacionInterfaces;
+import co.usa.ciclo3.ciclo3.model.Cliente;
 import co.usa.ciclo3.ciclo3.model.Reservacion;
+import co.usa.ciclo3.ciclo3.reportes.ContadorClientes;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +39,7 @@ public class ReservacionRepository {
         crud4.delete(reservacion);
     }
      
-/*     public List<Reservacion> ReservacionStatus (String status){
+     public List<Reservacion> ReservacionStatus (String status){
          return crud4.findAllByStatus(status);
     }
      
@@ -51,5 +55,6 @@ public class ReservacionRepository {
          
          }
          return res;
-*/
+
 }
+    }

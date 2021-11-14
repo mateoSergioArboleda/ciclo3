@@ -4,7 +4,9 @@
  */
 package co.usa.ciclo3.ciclo3.service;
 
+import co.usa.ciclo3.ciclo3.reportes.StatusReservas;
 import co.usa.ciclo3.ciclo3.model.Reservacion;
+import co.usa.ciclo3.ciclo3.reportes.ContadorClientes;
 import co.usa.ciclo3.ciclo3.repository.ReservacionRepository;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -76,7 +78,7 @@ public class ReservacionService {
         }).orElse(false);
         return aBoolean;
     }
-/*	
+	
     public StatusReservas getReporteStatusReservaciones(){
         List<Reservacion>completed= metodosCrud.ReservacionStatus("completed");
         List<Reservacion>cancelled= metodosCrud.ReservacionStatus("cancelled");
@@ -103,5 +105,5 @@ public class ReservacionService {
     public List<ContadorClientes> servicioTopClientes(){
         return metodosCrud.getTopClientes();
     }
-*/
+
 }
