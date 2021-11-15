@@ -79,31 +79,31 @@ public class ReservacionService {
         return aBoolean;
     }
 	
-    public StatusReservas getReporteStatusReservaciones(){
-        List<Reservacion>completed= metodosCrud.ReservacionStatus("completed");
-        List<Reservacion>cancelled= metodosCrud.ReservacionStatus("cancelled");
+    public StatusReservas getReservationsStatusReport(){
+        List<Reservacion>completed= metodosCrud.getReservacionByStatus("completed");
+        List<Reservacion>cancelled= metodosCrud.getReservacionByStatus("cancelled");
         return new StatusReservas(completed.size(), cancelled.size());
     }
     
-    public List<Reservacion> getReportesTiempoReservaciones(String datoA, String datoB){
+    public List<Reservacion> getReservationPeriod(String dateA, String dateB){
         SimpleDateFormat parser=new SimpleDateFormat ("yyyy-MM-dd");
-        Date datoUno = new Date();
-        Date datoDos = new Date();
+        Date aDate = new Date();
+        Date bDate = new Date();
         
         try{
-            datoUno = parser.parse(datoA);
-            datoDos = parser.parse(datoB);
+            aDate = parser.parse(dateA);
+            bDate = parser.parse(dateB);
         }catch(ParseException evt){
             evt.printStackTrace();
-        }if(datoUno.before(datoDos)){
-            return metodosCrud.ReservacionTiempo(datoUno, datoDos);
+        }if(aDate.before(bDate)){
+            return metodosCrud.getReservationPeriod(aDate, aDate);
         }else{
             return new ArrayList<>();
         }
     }  
     
-    public List<ContadorClientes> servicioTopClientes(){
-        return metodosCrud.getTopClientes();
+    public List<ContadorClientes> getTopClients(){
+        return metodosCrud.getTopClients();
     }
 
 }

@@ -62,18 +62,18 @@ public class ReservacionController {
     }
     
     @GetMapping("/report-status")
-    public StatusReservas getReservas(){
-        return servicio.getReporteStatusReservaciones();
+    public StatusReservas getReservationsStatusReport(){
+        return servicio.getReservationsStatusReport();
     }
     
     @GetMapping("/report-dates/{dateOne}/{dateTwo}")
-    public List<Reservacion> getReservasTiempo (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo){
-        return servicio.getReportesTiempoReservaciones(dateOne, dateTwo);
+    public List<Reservacion> getReservationsReportDates (@PathVariable("dateOne")String dateOne, @PathVariable("dateTwo")String dateTwo){
+        return servicio.getReservationPeriod(dateOne, dateTwo);
     }
     
     @GetMapping("/report-clients")
-    public List<ContadorClientes> getClientes(){
-        return servicio.servicioTopClientes();
+    public List<ContadorClientes> getReservationsReportsClient(){
+        return servicio.getTopClients();
     
     }
    

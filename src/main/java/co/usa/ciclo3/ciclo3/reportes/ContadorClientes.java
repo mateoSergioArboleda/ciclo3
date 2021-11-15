@@ -35,6 +35,6 @@ public class ContadorClientes {
     public void setClient(Cliente client) {
         this.client = client;
     }
-    
-    
+
+        
 }
