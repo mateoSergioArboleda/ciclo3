@@ -80,8 +80,8 @@ public class ReservacionService {
     }
 	
     public StatusReservas getReservationsStatusReport(){
-        List<Reservacion>completed= metodosCrud.getReservacionByStatus("completed");
-        List<Reservacion>cancelled= metodosCrud.getReservacionByStatus("cancelled");
+        List<Reservacion>completed= metodosCrud.getReservationByStatus("completed");
+        List<Reservacion>cancelled= metodosCrud.getReservationByStatus("cancelled");
         return new StatusReservas(completed.size(), cancelled.size());
     }
     
